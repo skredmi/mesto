@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pages/index.css">
+    <title>Mesto</title>
+</head>
+<body class="page">
+    <header class="header">
+        <img src="./images/logo.svg" class="header__logo" alt="Логотип">
+    </header> 
+    <main class="content">
+        <section class="profile">
+            <div class="profile__avatar"></div>
+            <div class="profile__info">
+                <h1 class="profile__title">Жак-Ив Кусто</h1>
+                <div class="profile__edit">
+                    <button class="profile__button-edit" type="button"></button>
+                </div>
+                <h3 class="profile__subtitle">Исследователь океана</h3>
+            </div>
+            <div class="profile__add">
+                <button class="profile__button-add" type="button"></button>
+            </div>
+        </section>
+        <section class="elements">
+            <div class="element">
+                <img src="./images/karachaevsk.jpg" class="element__image" alt="Церковь на фоне гор">
+                <div class="element__description">
+                    <p class="element__title">
+                        Карачаевск
+                    </p>
+                    <button class="element__button" type="button">
+                        <img src="images/like.svg" class="element__like" alt="Значок сердца">
+                    </button>
+                </div>
+            </div>
+            <div class="element">
+                <img src="/images/elbrus.jpg" class="element__image" alt="Гора Эльбрус на закате">
+                <div class="element__description">
+                    <p class="element__title">
+                        Гора Эльбрус
+                    </p>
+                    <button class="element__button" type="button">
+                        <img src="images/like.svg" class="element__like" alt="Значок сердца">
+                    </button>
+                </div>
+            </div>
+            <div class="element">
+                <img src="./images/dombai.jpg" class="element__image" alt="Вершина горы Домбай, заснеженная снегом">
+                <div class="element__description">
+                    <p class="element__title">
+                        Домбай
+                    </p>
+                    <button class="element__button" type="button">
+                        <img src="images/like.svg" class="element__like" alt="Значок сердца">
+                    </button>
+                </div>
+            </div>
+            <div class="element">
+                <img src="./images/elbrus.jpg" class="element__image" alt="Гора Эльбрус на закате">
+                <div class="element__description">
+                    <p class="element__title">
+                        Гора Эльбрус
+                    </p>
+                    <button class="element__button" type="button">
+                        <img src="images/like.svg" class="element__like" alt="Значок сердца">
+                    </button>
+                </div>
+            </div>
+            <div class="element">
+                <img src="./images/dombai.jpg" class="element__image" alt="Вершина горы Домбай, заснеженная снегом">
+                <div class="element__description">
+                    <p class="element__title">
+                        Домбай
+                    </p>
+                    <button class="element__button" type="button">
+                        <img src="images/like.svg" class="element__like" alt="Значок сердца">
+                    </button>
+                </div>
+            </div>
+            <div class="element">
+                <img src="./images/karachaevsk.jpg" class="element__image" alt="Церковь на фоне гор">
+                <div class="element__description">
+                    <p class="element__title">
+                        Карачаево-Черкесия
+                    </p>
+                    <button class="element__button" type="button">
+                        <img src="images/like.svg" class="element__like" alt="Значок сердца">
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="footer__copyright">
+            &copy; 2020 Mesto Russia
+        </p>
+    </footer>
+    <section class="popup">
+        <form class="popup__container">
+            <div class="popup__close">
+                <button class="popup__button-close" type="button"></button>
+            </div>
+            <h3 class="popup__title">
+                Редактировать профиль
+            </h3>
+            <div class="popup__fields">
+            <input type="text" class="popup__field popup__name">
+            <input type="text" class="popup__field popup__about">
+            </div>
+            <div class="popup__save">
+                <button class="popup__button-save" type="submit">
+                    Сохранить
+                </button>
+            </div>
+        </form>
+    </section>
+    <script src="./scripts/index.js"></script>
+</body>
+</html>

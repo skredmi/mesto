@@ -1,0 +1,13 @@
+.popup__save {
+    max-width: 358px;
+    padding: 0 36px 36px;
+    margin-top: 48px;
+}
+
+@media screen and (max-width: 767px) {
+    .popup__save {
+        max-width: 240px;
+        padding: 0 21px 24px;
+        margin-top: 36px;
+    }
+}
