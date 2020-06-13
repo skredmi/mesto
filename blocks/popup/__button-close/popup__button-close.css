@@ -10,6 +10,7 @@
     transform: rotate(45deg);
     top: -35px;
     left: 443px;
+    cursor: pointer;
 }
 .popup__button-close:after {
     content: "";
