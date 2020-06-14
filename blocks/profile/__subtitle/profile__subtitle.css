@@ -4,8 +4,9 @@
     font-size: 18px;
     line-height: 22px;
     margin: 0;
-    grid-column-start: 1;
-    grid-column-end: span 2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 767px) {
