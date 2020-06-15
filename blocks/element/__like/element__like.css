@@ -4,5 +4,9 @@
     cursor: pointer;
     box-shadow: none;
     border: none;
-    cursor: pointer;
+}
+
+.element__like:hover {
+    transition: opacity 0.3s linear;
+    opacity: 0.6;
 }
