@@ -13,6 +13,12 @@
     margin-bottom: 51px;
 }
 
+@media screen and (max-width: 882px) {
+    .profile {
+        padding: 0 19px;
+    }
+}
+
 @media screen and (max-width: 767px) {
     .profile {
         max-width: 282px;

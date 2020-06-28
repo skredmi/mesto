@@ -1,17 +1,27 @@
+@import url(__list/elements__list.css);
+@import url(__item/elements__item.css);
+@import url(__image/elements__image.css);
+@import url(__button/elements__button.css);
+@import url(__description/elements__description.css);
+@import url(__title/elements__title.css);
+@import url(__like/elements__like.css);
+
+
 .elements {
     max-width: 882px;
     margin: 0 auto;
     margin-bottom: 66px;
-    display: grid;
-    grid-template-columns: repeat(3, 282px);
-    grid-gap: 20px 18px;
+}
+
+@media screen and (max-width: 882px) {
+    .elements {
+        padding: 0 19px;
+    }
 }
 
 @media screen and (max-width: 767px) {
     .elements {
         max-width: 282px;
-        grid-template-columns: 282px;
-        grid-gap: 20px;
         margin-bottom: 48px;
     }
 }
