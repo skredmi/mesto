@@ -10,38 +10,42 @@ const buttonEdit = document.querySelector('.profile__button-edit');
 const buttonAdd = document.querySelector('.profile__button-add');
 const listElement = document.querySelector('.elements__list');
 const templateElement = document.querySelector('.elements-template');
-let name = document.querySelector ('.profile__title');
-let job = document.querySelector ('.profile__subtitle');
-let nameInput = document.querySelector ('.popup__name');
-let jobInput = document.querySelector ('.popup__about');
-let placeInput = document.querySelector('.popup__place');
-let linkInput = document.querySelector('.popup__link');
-let placePhoto = document.querySelector('.popup-photo__place');
-let titlePhoto = document.querySelector('.popup-photo__title');
+const name = document.querySelector ('.profile__title');
+const job = document.querySelector ('.profile__subtitle');
+const nameInput = document.querySelector ('.popup__name');
+const jobInput = document.querySelector ('.popup__about');
+const placeInput = document.querySelector('.popup__place');
+const linkInput = document.querySelector('.popup__link');
+const placePhoto = document.querySelector('.popup-photo__place');
+const titlePhoto = document.querySelector('.popup-photo__title');
 
-
-//загрузка массива карточек на страницу
-function addCard(item) {
-    const card = templateElement.content.cloneNode(true);
-    card.querySelector('.elements__title').textContent = item.name;
-    card.querySelector('.elements__image').src = item.link;
-    addCardListener (card);
-    generateCard(card);
-}
-
-function generateCard (card) {
-    listElement.prepend(card);
-}
-
-initialCards.forEach(item => {
-    addCard(item);
-});
-
+// действия с карточками
 function addCardListener (card) {
     card.querySelector('.elements__button').addEventListener('click', deliteCard);
     card.querySelector('.elements__like').addEventListener('click', setLike);
     card.querySelector('.elements__image').addEventListener('click', photoFormSubmitHandler);
 }
+
+// создание карточки
+function generateCard (item) {
+    const card = templateElement.content.cloneNode(true);
+    card.querySelector('.elements__title').textContent = item.name;
+    card.querySelector('.elements__image').src = item.link;
+    addCardListener (card);
+    return card;
+}
+
+//добавление карточек в контейнер
+function addCard (card) {
+    listElement.prepend(generateCard(card));
+    
+}
+
+// добавление карточек на страницу
+initialCards.forEach(item => {
+    addCard(item);
+});
+
 
 //управление попапом
 function togglePopup (popup) {
@@ -69,12 +73,11 @@ popupCloseEdit.addEventListener ('click', () => togglePopup(popupEdit));
 //добавление карточки в попапе
 function cardFormSubmitHandler (evt) {
     evt.preventDefault();
-    let name = placeInput.value;
-    let link = linkInput.value;
+    const name = placeInput.value;
+    const link = linkInput.value;
     addCard ({name, link});
     togglePopup(popupAdd);
 }
-buttonAdd.addEventListener ('click', openAddCardPopup);
 popupAdd.addEventListener('submit', cardFormSubmitHandler);
 popupCloseAdd.addEventListener ('click', () => togglePopup(popupAdd));
 
@@ -84,6 +87,7 @@ function openAddCardPopup() {
     linkInput.value = '';
     togglePopup(popupAdd);
 }
+buttonAdd.addEventListener ('click', openAddCardPopup);
 
 // добавление лайка
 function setLike (evt) {
@@ -98,8 +102,8 @@ function deliteCard (evt) {
 
 //открытие попапа с фото
 function photoFormSubmitHandler (evt) {
-    let element = evt.target.closest('.elements__item');
-    let placeElement = event.target.closest('.elements__image');
+    const element = evt.target.closest('.elements__item');
+    const placeElement = event.target.closest('.elements__image');
     titlePhoto.textContent = element.textContent;
     placePhoto.src = placeElement.src;
     togglePopup(popupPhoto);
