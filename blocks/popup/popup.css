@@ -3,6 +3,7 @@
 @import url(__title/popup__title.css);
 @import url(__fields/popup__fields.css);
 @import url(__field/popup__field.css);
+@import url(__input/popup__input.css);
 @import url(__button-save/popup__button-save.css);
 
 .popup {
@@ -19,5 +20,5 @@
     align-items: center;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
+    transition: visibility 0.5s, opacity 0.5s linear;
 }
