@@ -65,4 +65,5 @@ function cleanError (popup, config) {
   inputList.forEach((inputElement) => {
       hideInputError (formElement, inputElement, config);
   });
+  toggleButtonState(inputList, buttonElement, config);
 }

@@ -114,22 +114,14 @@ initialCards.forEach(item => {
     addCard(item);
 });
 
-// заполнение инпутов формы значениями из профиля
-function ProfilePopup() {
+// открытие формы редактирования профиля
+function profilePopup() {
     nameInput.value = name.textContent;
     jobInput.value = job.textContent;
-}
-
-//открытие формы профиля
-buttonEdit.addEventListener ('click', () => {
-    ProfilePopup();
     openPopup(popupEdit);
     cleanError (popupEdit, config);
-    const formElement = popupEdit.querySelector(config.formSelector);
-    const buttonElement = formElement.querySelector(config.submitButtonSelector);
-    const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
-    toggleButtonState(inputList, buttonElement, config);
-});
+}
+buttonEdit.addEventListener ('click', profilePopup);
 
 //применение введенных значение в профиле
 function profileFormSubmitHandler (evt) {
@@ -152,19 +144,11 @@ function cardFormSubmitHandler (evt) {
 popupAdd.addEventListener('submit', cardFormSubmitHandler);
 popupCloseAdd.addEventListener ('click', () => closePopup(popupAdd));
 
-//обнуление полей у попапа добавления карточки
+//открытие формы добавления карточек
 function openAddCardPopup() {
     placeInput.value = '';
-    linkInput.value = '';   
-}
-
-//открытие попапа добавления карточки
-buttonAdd.addEventListener ('click', () => {
-    openAddCardPopup();
+    linkInput.value = '';
     openPopup(popupAdd);
-    cleanError (popupAdd, config);
-    const formElement = popupAdd.querySelector(config.formSelector);
-    const buttonElement = formElement.querySelector(config.submitButtonSelector);
-    const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
-    toggleButtonState(inputList, buttonElement, config);
-});
+    cleanError (popupAdd, config);    
+}
+buttonAdd.addEventListener ('click', openAddCardPopup);
