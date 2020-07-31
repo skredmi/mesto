@@ -29,15 +29,15 @@ export class Card {
         return this._element;
     }
 
-    _setLike = (evt) => {
+    _setLike (evt) {
         evt.target.classList.toggle('elements__like_active');
     }
         
-    _deleteCard = (evt) => {
+    _deleteCard (evt) {
         evt.target.closest('.elements__item').remove();
     }
 
-    _openPopupPhoto = (evt) => {
+    _openPopupPhoto (evt) {
         this._element = evt.target.closest('.elements__item');
         this._placeElement = event.target.closest('.elements__image');
         this._placePhoto = document.querySelector('.popup-photo__place');
