@@ -11,14 +11,14 @@ const popupPhoto = document.querySelector('.popup-photo');
 const popupClosePhoto = popupPhoto.querySelector('.popup__button-close');
 const buttonEdit = document.querySelector('.profile__button-edit');
 const buttonAdd = document.querySelector('.profile__button-add');
-const listElement = document.querySelector('.elements__list');
-const templateElement = document.querySelector('.elements-template');
 const name = document.querySelector ('.profile__title');
 const job = document.querySelector ('.profile__subtitle');
 const nameInput = document.querySelector ('.popup__name');
 const jobInput = document.querySelector ('.popup__about');
 const placeInput = document.querySelector('.popup__place');
 const linkInput = document.querySelector('.popup__link');
+const listElement = document.querySelector('.elements__list'); 
+const templateElement = '.elements-template'; 
 const config = {
     formSelector: '.popup__container',
     inputSelector: '.popup__input',
@@ -52,9 +52,9 @@ popupClosePhoto.addEventListener ('click', () => closePopup(popupPhoto));
 
 //добавление карточек в контейнер
 function addCard ({name, link}) {
-    const card = new Card(name, link, '.elements-template');
+    const card = new Card(name, link, templateElement);
     const cardElement = card.generateCard();
-    document.querySelector('.elements__list').prepend(cardElement);
+    listElement.prepend(cardElement);
 }
 
 // добавление карточек на страницу
