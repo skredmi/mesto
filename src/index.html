@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="pages/index.css">
     <title>Mesto</title>
 </head>
 <body class="page">
@@ -37,11 +36,11 @@
             </h3>
             <div class="popup__fields">
                 <label class="popup__field">
-                    <input type="text" class="popup__input popup__name" required minlength="2" maxlength="40"  id="name-input">
+                    <input type="text" class="popup__input popup__name" required minlength="2" maxlength="40"  id="name-input" name = "name">
                     <span class="popup__input-error" id="name-input-error"></span>
                 </label>
                 <label class="popup__field">
-                    <input type="text" class="popup__input popup__about" required minlength="2" maxlength="200" id="about-input">
+                    <input type="text" class="popup__input popup__about" required minlength="2" maxlength="200" id="about-input" name = "job">
                     <span class="popup__input-error" id="about-input-error"></span>
                 </label>
             </div>
@@ -56,11 +55,11 @@
             </h3>
             <div class="popup__fields">
                 <label class="popup__field">
-                    <input type="text" placeholder="Название" class="popup__input popup__place" required minlength="1" maxlength="30" id="place-input">
+                    <input type="text" placeholder="Название" class="popup__input popup__place" required minlength="1" maxlength="30" id="place-input" name = "name">
                     <span class="popup__input-error" id="place-input-error"></span>
                 </label>
                 <label class="popup__field">
-                    <input type="url" placeholder="Ссылка на картинку" class="popup__input popup__link" required id="link-input">
+                    <input type="url" placeholder="Ссылка на картинку" class="popup__input popup__link" required id="link-input" name = "link">
                     <span class="popup__input-error" id="link-input-error"></span>
                 </label>
             </div>
@@ -84,6 +83,5 @@
             </div>
         </li>
     </template>
-    <script type = "module" src="scripts/index.js"></script>
 </body>
 </html>

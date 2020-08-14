@@ -1,10 +1,9 @@
-import {openPopup} from './utils.js';
-
 export class Card {
-    constructor (name, link, templateElements) {
-        this._name = name;
-        this._link = link;
+    constructor ({data, handleCardClick}, templateElements) {
+        this._name = data.name;
+        this._link = data.link;
         this._templateElements = templateElements;
+        this._handleCardClick = handleCardClick;
     }
 
     _getTemplate() {
@@ -37,21 +36,9 @@ export class Card {
         evt.target.closest('.elements__item').remove();
     }
 
-    _openPopupPhoto (evt) {
-        this._element = evt.target.closest('.elements__item');
-        this._placeElement = event.target.closest('.elements__image');
-        this._placePhoto = document.querySelector('.popup-photo__place');
-        this._titlePhoto = document.querySelector('.popup-photo__title');
-        const popupPhoto = document.querySelector('.popup-photo');
-        this._titlePhoto.textContent = this._element.textContent;
-        this._placePhoto.src = this._placeElement.src;
-        this._placePhoto.alt = this._element.textContent;
-        openPopup(popupPhoto);
-    }
-
     _addCardListener() {
         this._element.querySelector('.elements__button').addEventListener('click', this._deleteCard);
         this._element.querySelector('.elements__like').addEventListener('click', this._setLike);
-        this._element.querySelector('.elements__image').addEventListener('click', this._openPopupPhoto);
+        this._element.querySelector('.elements__image').addEventListener('click', this._handleCardClick);
     }
 }
