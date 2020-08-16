@@ -1,5 +1,5 @@
 export class Card {
-    constructor ({data, handleCardClick}, templateElements) {
+    constructor({ data, handleCardClick }, templateElements) {
         this._name = data.name;
         this._link = data.link;
         this._templateElements = templateElements;
@@ -8,11 +8,11 @@ export class Card {
 
     _getTemplate() {
         const cardElement = document
-        .querySelector(this._templateElements)
-        .content
-        .querySelector('.elements__item')
-        .cloneNode(true);
-        
+            .querySelector(this._templateElements)
+            .content
+            .querySelector('.elements__item')
+            .cloneNode(true);
+
         return cardElement;
     }
 
@@ -28,11 +28,11 @@ export class Card {
         return this._element;
     }
 
-    _setLike (evt) {
+    _setLike(evt) {
         evt.target.classList.toggle('elements__like_active');
     }
-        
-    _deleteCard (evt) {
+
+    _deleteCard(evt) {
         evt.target.closest('.elements__item').remove();
     }
 

@@ -1,10 +1,10 @@
-import {initialCards, config} from '../utils/constants.js';
-import {PopupWithImage} from '../components/popupWithImage.js';
-import {PopupWithForm} from '../components/popupWithForm.js';
-import {Card} from '../components/card.js';
-import {FormValidator} from '../components/formValidator.js';
-import {Section} from '../components/section.js';
-import {UserInfo} from '../components/userInfo.js';
+import { initialCards, config } from '../utils/constants.js';
+import { PopupWithImage } from '../components/popupWithImage.js';
+import { PopupWithForm } from '../components/popupWithForm.js';
+import { Card } from '../components/card.js';
+import { FormValidator } from '../components/formValidator.js';
+import { Section } from '../components/section.js';
+import { UserInfo } from '../components/userInfo.js';
 import '../pages/index.css';
 
 const popupEdit = document.querySelector('.popup_edit');
@@ -25,31 +25,31 @@ formValidatorAdd.enableValidation();
 
 //добавление карточек на страницу
 const containerSelector = '.elements__list';
-const popupImage = new PopupWithImage ('.popup-photo');
-const cardList = new Section ({
+const popupImage = new PopupWithImage('.popup-photo');
+const cardList = new Section({
     items: initialCards,
     renderer: (item) => {
         const card = new Card({
             data: item,
             handleCardClick: () => {
                 popupImage.open(item.name, item.link)
-                popupImage.setEventListeners(item.name, item.link);
             }
         },
             templateElement);
         const cardElement = card.generateCard();
         cardList.addItem(cardElement);
     },
-}, 
-containerSelector
+},
+    containerSelector
 );
 cardList.renderItems();
+popupImage.setEventListeners();
 
 // попап редактирования профиля
 const popupEditSelector = '.popup_edit';
-const userProfile = new UserInfo (name, job);
+const userProfile = new UserInfo(name, job);
 
-const popupEditForm = new PopupWithForm ({
+const popupEditForm = new PopupWithForm({
     popupSelector: popupEditSelector,
     handleFormSubmit: (inputValues) => {
         userProfile.setUserInfo(inputValues.name, inputValues.job);
@@ -60,23 +60,22 @@ buttonEdit.addEventListener('click', () => {
     nameInput.value = profileInfo.name;
     jobInput.value = profileInfo.job;
     popupEditForm.open();
-    popupEditForm.setEventListeners();
     formValidatorProfile.cleanError();
 });
+popupEditForm.setEventListeners();
 
 //попап добавления карточек
 const popupAddSelector = '.popup_add';
-const popupAddForm = new PopupWithForm ({
+const popupAddForm = new PopupWithForm({
     popupSelector: popupAddSelector,
     handleFormSubmit: item => {
         const card = new Card({
             data: item,
             handleCardClick: () => {
                 popupImage.open(item.name, item.link)
-                popupImage.setEventListeners(item.name, item.link);
             }
         },
-        templateElement);
+            templateElement);
         const cardElement = card.generateCard();
         cardList.addItem(cardElement);
     }
@@ -85,6 +84,6 @@ const popupAddForm = new PopupWithForm ({
 buttonAdd.addEventListener('click', () => {
     popupAddForm.reset();
     popupAddForm.open();
-    popupAddForm.setEventListeners();
-    formValidatorAdd.cleanError(); 
+    formValidatorAdd.cleanError();
 });
+popupAddForm.setEventListeners();
