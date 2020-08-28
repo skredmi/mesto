@@ -4,16 +4,17 @@ export class UserInfo {
         this._userJob = userJob;
     }
 
-    getUserInfo() {
+    getUserInfo(result) {
+        this._result = result;
         this._userProfile = {};
-        this._userProfile.name = this._userName.textContent;
-        this._userProfile.job = this._userJob.textContent;
+        this._userProfile = this._userName.textContent;
+        this._userProfile = this._userJob.textContent;
 
         return this._userProfile;
     }
 
-    setUserInfo(name, job) {
+    setUserInfo(name, about) {
         this._userName.textContent = name;
-        this._userJob.textContent = job;
+        this._userJob.textContent = about;
     }
 }

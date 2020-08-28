@@ -11,11 +11,13 @@
     </header> 
     <main class="content">
         <section class="profile">
-            <div class="profile__avatar"></div>
+            <div class="profile__avatar">
+                <img src ="#" class="profile__avatar-img"></img>
+            </div>
             <div class="profile__info">
-                <h1 class="profile__title">Жак-Ив Кусто</h1>
+                <h1 class="profile__title"></h1>
                 <button class="profile__button-edit" type="button"></button>
-                <h3 class="profile__subtitle">Исследователь океана</h3>
+                <h3 class="profile__subtitle"></h3>
             </div>
             <button class="profile__button-add" type="button"></button>
         </section>
@@ -40,7 +42,7 @@
                     <span class="popup__input-error" id="name-input-error"></span>
                 </label>
                 <label class="popup__field">
-                    <input type="text" class="popup__input popup__about" required minlength="2" maxlength="200" id="about-input" name = "job">
+                    <input type="text" class="popup__input popup__about" required minlength="2" maxlength="200" id="about-input" name = "about">
                     <span class="popup__input-error" id="about-input-error"></span>
                 </label>
             </div>
@@ -66,6 +68,30 @@
             <button class="popup__button-save popup__button-save_disabled" type="submit" disabled>Создать</button>
         </form>
     </section>
+    <section class="popup popup_avatar">
+        <form class="popup__container" novalidate>
+            <button class="popup__button-close" type="button"></button>
+            <h3 class="popup__title">
+                Обновить аватар
+            </h3>
+            <div class="popup__fields">
+                <label class="popup__field">
+                    <input type="url" placeholder="Ссылка на картинку" class="popup__input popup__link" required id="link-input" name = "link">
+                    <span class="popup__input-error" id="link-input-error"></span>
+                </label>
+            </div>
+            <button class="popup__button-save popup__button-save_disabled" type="submit" disabled>Сохранить</button>
+        </form>
+    </section>
+    <section class="popup popup_delete">
+        <form class="popup__container">
+            <button class="popup__button-close" type="button"></button>
+            <h3 class="popup__title">
+                Вы уверены?
+            </h3>
+            <button class="popup__button-save" type="submit">Да</button>
+        </form>
+    </section>
     <section class="popup popup-photo">
         <div class="popup-photo__container">
             <img src="#" alt="Изображение места" class="popup-photo__place">
@@ -79,7 +105,10 @@
             <button class="elements__button" type="button"></button>
             <div class="elements__description">
                 <p class="elements__title"></p>
-                <button class="elements__like" type="button"></button>
+                <div class = "elements__like">
+                    <button class="elements__like-button" type="button"></button>
+                    <p class="elements__like-count"></p>
+                </div>
             </div>
         </li>
     </template>
