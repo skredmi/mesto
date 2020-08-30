@@ -11,6 +11,6 @@
 * Проект собран с помощью **webpack**
 * Работа с **API**
 
-* [Ссылка на проект](https://skredmi.github.io/mesto/index.html)
+* [Ссылка на проект](https://skredmi.github.io/mesto)
 
 
