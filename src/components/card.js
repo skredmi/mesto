@@ -34,7 +34,7 @@ export class Card {
             this._element.querySelector('.elements__button').style.display = 'none';
         };
         this._element.querySelector('.elements__like-count').textContent = this._likes.length;
-        if (this._likes.find(item => item._id === this._userId)) {
+        if (this._likes.some(item => item._id === this._userId)) {
             this._element.querySelector('.elements__like-button').classList.toggle('elements__like-button_active')
         }
         return this._element;

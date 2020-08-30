@@ -112,6 +112,7 @@ const popupEditForm = new PopupWithForm({
         api.changeUserProfile(name, about)
             .then(() => {
                 userProfile.setUserInfo(name, about);
+                popupEditForm.close();
             })
             .catch((err) => {
                 console.log(err);
@@ -132,7 +133,10 @@ const popupAddForm = new PopupWithForm({
     popupSelector: popupAddSelector,
     handleFormSubmit: item => {
         api.addCard(item.name, item.link)
-            .then(renderer)
+            .then((item) => {
+                renderer(item);
+                popupAddForm.close();
+            })
             .catch((err) => {
                 console.log(err);
             })
@@ -154,6 +158,7 @@ const popupAvatarForm = new PopupWithForm({
         api.avatar(link)
             .then(() => {
                 avatar.src = link;
+                popupAvatarForm.close();
             })
             .catch((err) => {
                 console.log(err);
