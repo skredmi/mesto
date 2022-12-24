@@ -13,4 +13,6 @@
 
 * [Ссылка на проект](https://skredmi.github.io/mesto)
 
+![mesto](https://user-images.githubusercontent.com/63904240/209444818-e172d1e4-b3cc-485b-94af-6ec2fc8ddffa.JPG)
+
 
